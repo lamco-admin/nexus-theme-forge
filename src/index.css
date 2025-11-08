@@ -7,90 +7,293 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* =================================================================
+     PROFESSIONAL THEME (Light Mode Default)
+     Based on Material Design principles for call center applications
+     ================================================================= */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Core Colors */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 222 47% 11%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 210 85% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 85% 45%;
+    --primary-active: 210 85% 40%;
+    
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --secondary-hover: 210 40% 92%;
+    
+    --accent: 275 60% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 275 60% 50%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 85% 50%;
+    
+    /* Status Colors - Call Center Specific */
+    --status-available: 142 71% 45%;
+    --status-on-call: 199 89% 48%;
+    --status-wrap-up: 38 92% 50%;
+    --status-break: 45 93% 58%;
+    --status-offline: 220 9% 46%;
+    --status-busy: 0 72% 51%;
+    
+    --call-ringing: 38 92% 50%;
+    --call-active: 142 71% 45%;
+    --call-hold: 45 93% 58%;
+    --call-ended: 220 9% 46%;
+    --call-missed: 0 72% 51%;
+    
+    /* Priority Colors */
+    --priority-low: 142 71% 45%;
+    --priority-medium: 38 92% 50%;
+    --priority-high: 0 72% 51%;
+    --priority-urgent: 275 60% 55%;
+    
+    /* Shadows & Elevation */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.12), 0 1px 2px -1px rgb(0 0 0 / 0.12);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.16), 0 2px 4px -2px rgb(0 0 0 / 0.12);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.19), 0 4px 6px -4px rgb(0 0 0 / 0.12);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.25), 0 8px 10px -6px rgb(0 0 0 / 0.12);
+    
+    /* Spacing System (4px base) */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius: 8px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 210 85% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 210 85% 50%;
   }
 
+  /* =================================================================
+     DARK MODE
+     ================================================================= */
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    
+    --card: 222 47% 15%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    
+    --popover: 222 47% 15%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    
+    --primary: 210 100% 65%;
+    --primary-foreground: 222 47% 11%;
+    --primary-hover: 210 100% 70%;
+    --primary-active: 210 100% 60%;
+    
+    --secondary: 217 33% 18%;
     --secondary-foreground: 210 40% 98%;
+    --secondary-hover: 217 33% 22%;
+    
+    --accent: 275 70% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 275 70% 70%;
+    
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+    
+    --destructive: 0 63% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 71% 50%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+    
+    --info: 199 89% 55%;
+    --info-foreground: 0 0% 100%;
+    
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 210 100% 65%;
+    
+    /* Status Colors */
+    --status-available: 142 71% 50%;
+    --status-on-call: 199 89% 55%;
+    --status-wrap-up: 38 92% 55%;
+    --status-break: 45 93% 62%;
+    --status-offline: 220 9% 56%;
+    --status-busy: 0 63% 55%;
+    
+    --call-ringing: 38 92% 55%;
+    --call-active: 142 71% 50%;
+    --call-hold: 45 93% 62%;
+    --call-ended: 220 9% 56%;
+    --call-missed: 0 63% 55%;
+    
+    --priority-low: 142 71% 50%;
+    --priority-medium: 38 92% 55%;
+    --priority-high: 0 63% 55%;
+    --priority-urgent: 275 70% 65%;
+    
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+    
+    --sidebar-background: 222 47% 15%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 100% 65%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 33% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 210 100% 65%;
+  }
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+  /* =================================================================
+     MODERN THEME
+     Vibrant, gradient-heavy design for creative teams
+     ================================================================= */
+  [data-theme="modern"] {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 10%;
+    
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 262 83% 53%;
+    
+    --secondary: 340 75% 55%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 170 75% 41%;
+    --accent-foreground: 0 0% 100%;
+    
+    --radius: 16px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+  }
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+  [data-theme="modern"].dark {
+    --background: 240 10% 8%;
+    --foreground: 240 10% 98%;
+    
+    --primary: 262 90% 65%;
+    --secondary: 340 80% 60%;
+    --accent: 170 80% 48%;
+  }
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+  /* =================================================================
+     MINIMAL THEME
+     Clean, spacious design with subtle colors
+     ================================================================= */
+  [data-theme="minimal"] {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 20%;
+    
+    --accent: 0 0% 40%;
+    --accent-foreground: 0 0% 100%;
+    
+    --border: 0 0% 90%;
+    --radius: 2px;
+    --radius-lg: 4px;
+  }
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  [data-theme="minimal"].dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 100%;
+    
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 10%;
+    
+    --secondary: 0 0% 20%;
+    --accent: 0 0% 70%;
+  }
+
+  /* =================================================================
+     HIGH CONTRAST THEME
+     WCAG AAA compliant for accessibility
+     ================================================================= */
+  [data-theme="high-contrast"] {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    
+    --primary: 210 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --accent: 45 100% 35%;
+    --accent-foreground: 0 0% 0%;
+    
+    --border: 0 0% 0%;
+    --radius: 0px;
+  }
+
+  [data-theme="high-contrast"].dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    
+    --primary: 210 100% 70%;
+    --primary-foreground: 0 0% 0%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 45 100% 70%;
+    --border: 0 0% 100%;
   }
 }
 
@@ -101,5 +304,150 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Helvetica Neue', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography Scale */
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  
+  h4 {
+    @apply text-xl font-medium;
+  }
+  
+  h5 {
+    @apply text-lg font-medium;
+  }
+  
+  h6 {
+    @apply text-base font-medium;
+  }
+}
+
+/* =================================================================
+   CUSTOM UTILITIES
+   ================================================================= */
+@layer utilities {
+  /* Status Indicators */
+  .status-available {
+    @apply bg-[hsl(var(--status-available))];
+  }
+  
+  .status-on-call {
+    @apply bg-[hsl(var(--status-on-call))];
+  }
+  
+  .status-wrap-up {
+    @apply bg-[hsl(var(--status-wrap-up))];
+  }
+  
+  .status-break {
+    @apply bg-[hsl(var(--status-break))];
+  }
+  
+  .status-offline {
+    @apply bg-[hsl(var(--status-offline))];
+  }
+  
+  .status-busy {
+    @apply bg-[hsl(var(--status-busy))];
+  }
+
+  /* Animations */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  /* Shadows */
+  .shadow-elevation-1 {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-elevation-2 {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-elevation-3 {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-elevation-4 {
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Transitions */
+  .transition-fast {
+    transition: all var(--transition-fast);
+  }
+
+  .transition-base {
+    transition: all var(--transition-base);
+  }
+
+  .transition-slow {
+    transition: all var(--transition-slow);
+  }
+}
+
+/* =================================================================
+   KEYFRAME ANIMATIONS
+   ================================================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(33, 150, 243, 0);
   }
 }
